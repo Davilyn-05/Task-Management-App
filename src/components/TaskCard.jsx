@@ -1,4 +1,4 @@
-export default function Task({ task, onDelete, onUpdate }) {
+export default function TaskCard({ task, onDelete, onUpdate }) {
   return (
     <div className="bg-white shadow p-4 rounded-md border">
       <h3 className="font-bold text-lg">{task.title}</h3>
