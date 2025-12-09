@@ -25,8 +25,9 @@ export default function App() {
   };
 
   const filteredTasks = tasks.filter(task =>
-    task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    task.description.toLowerCase().includes(searchTerm.toLowerCase())
+    (task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    task.description.toLowerCase().includes(searchTerm.toLowerCase())) &&
+    statusFilter.includes(task.status)
   );
 
   return (

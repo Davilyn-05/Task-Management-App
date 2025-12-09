@@ -1,2 +1,0 @@
-- [x] Add search state and filtering logic in App.jsx
-- [x] Update Navbar.jsx to include search input field
