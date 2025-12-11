@@ -6,9 +6,9 @@ export default function AddTask({ onAdd }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title) return alert("Please enter a task title");
+    if (!title.trim()) return alert("Please enter a task title");
 
-    onAdd(title, desc);
+    onAdd(title, desc, "todo");
     setTitle("");
     setDesc("");
   };
@@ -16,28 +16,44 @@ export default function AddTask({ onAdd }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow p-4 rounded-md border"
+      className="shadow-lg p-6 rounded-lg border-2 bg-white border-gray-200 text-gray-900"
     >
-      <h2 className="text-lg font-bold mb-2">Add Task</h2>
+      <h2 className="text-2xl font-bold mb-4">✨ Add New Task</h2>
 
-      <input
-        type="text"
-        placeholder="Task title"
-        className="border p-2 w-full rounded mb-2"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <div className="space-y-4">
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">
+            Task Title <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter task title..."
+            className="border-2 p-3 w-full rounded-lg focus:outline-none focus:border-blue-500 transition bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
 
-      <textarea
-        placeholder="Description"
-        className="border p-2 w-full rounded mb-2"
-        value={desc}
-        onChange={(e) => setDesc(e.target.value)}
-      />
+        <div>
+          <label className="block text-sm font-semibold mb-2 text-gray-700">
+            Description (Optional)
+          </label>
+          <textarea
+            placeholder="Enter task description..."
+            className="border-2 p-3 w-full rounded-lg focus:outline-none focus:border-blue-500 transition resize-none bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+            rows="3"
+            value={desc}
+            onChange={(e) => setDesc(e.target.value)}
+          />
+        </div>
 
-      <button className="bg-blue-600 text-white w-full py-2 rounded">
-        Add Task
-      </button>
+        <button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white w-full py-3 rounded-lg font-bold text-lg transition shadow-md active:scale-95"
+        >
+          ➕Add Task
+        </button>
+      </div>
     </form>
   );
 }

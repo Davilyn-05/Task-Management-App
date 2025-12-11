@@ -6,12 +6,12 @@
 :root {
   --primary-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   --secondary-bg: #f8f9fa;
-  --accent-color: #ff6b6b;
-  --success-color: #51cf66;
+  --accent-color: #5c75e6;
+  --success-color: #5e8ac0;
   --warning-color: #ffd43b;
   --info-color: #74c0fc;
-  --danger-color: #ff8787;
-  --text-primary: #212529;
+  --danger-color: #7dc56c;
+  --text-primary: #16191c;
   --text-secondary: #6c757d;
   --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-dark: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -50,7 +50,7 @@ a {
   transition: var(--transition);
 }
 a:hover {
-  color: #ff5252;
+  color: #34dc63;
   transform: translateY(-2px);
 }
 
@@ -81,7 +81,7 @@ button {
 button:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: var(--shadow-dark);
-  background: linear-gradient(45deg, #ff5252, #ff6b6b);
+  background: linear-gradient(45deg, #7eeb7e, #85e196);
 }
 button:focus,
 button:focus-visible {
@@ -142,7 +142,7 @@ button:focus-visible {
 
 /* Footer */
 .footer {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(174, 172, 172, 0.8);
   color: white;
 }
 
