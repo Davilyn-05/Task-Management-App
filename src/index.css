@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Color Palette and Variables */
+:root {
+  --primary-bg: white;
+  --secondary-bg: #f8f9fa;
+  --accent-color: #660000;
+  --success-color: #660000;
+  --warning-color: #660000;
+  --info-color: #660000;
+  --danger-color: #660000;
+  --text-primary: #16191c;
+  --text-secondary: #6c757d;
+  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-dark: 0 10px 25px rgba(0, 0, 0, 0.2);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--text-primary);
+  background: var(--primary-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: var(--primary-bg);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: url('/src/assets/') no-repeat center center fixed;
+  background-size: cover; /* ensures the image covers the entire screen */
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+
+/* Links */
+a {
+  font-weight: 500;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+a:hover {
+  color: #660000;
+  transform: translateY(-2px);
+}
+
+/* Headings */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  background: linear-gradient(45deg, var(--accent-color), var(--info-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Buttons */
+button {
+  border-radius: var(--border-radius);
+  border: 2px solid transparent;
+  padding: 0.75em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background: linear-gradient(45deg, var(--accent-color), var(--danger-color));
+  color: white;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-light);
+}
+button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-dark);
+  background: linear-gradient(45deg, #801818, #801818);
+}
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--info-color);
+  outline-offset: 2px;
+}
+
+/* Custom Components */
+.task-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-dark);
+}
+
+.task-status-todo {
+  border-left: 5px solid var(--info-color);
+}
+.task-status-in-progress {
+  border-left: 5px solid var(--warning-color);
+}
+.task-status-done {
+  border-left: 5px solid var(--success-color);
+}
+
+.delete-btn {
+  background: linear-gradient(45deg, var(--danger-color), #ff6b6b);
+  transition: var(--transition);
+}
+.delete-btn:hover {
+  background: linear-gradient(45deg, #ff5252, #ff8787);
+  transform: scale(1.1);
+}
+
+.select-status {
+  background: var(--secondary-bg);
+  border: 2px solid var(--info-color);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+.select-status:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+}
+
+/* Navbar */
+.navbar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-light);
+}
+
+/* Footer */
+.footer {
+  background: rgba(174, 172, 172, 0.8);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  button {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+  }
+
+  .task-card {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-bg: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    --secondary-bg: #2d3748;
+    --text-primary: #e2e8f0;
+    --text-secondary: #a0aec0;
+  }
+
+  .task-card {
+    background: rgba(45, 55, 72, 0.95);
+    color: var(--text-primary);
+  }
+
+  .navbar {
+    background: rgba(26, 32, 44, 0.9);
+  }
+
+  .footer {
+    background: rgba(0, 0, 0, 0.9);
+  }
+}
+
+
