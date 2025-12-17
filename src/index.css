@@ -41,16 +41,6 @@ body {
   color: var(--text-primary);
   transition: var(--transition);
 }
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: url('/src/assets/') no-repeat center center fixed;
-  background-size: cover; /* ensures the image covers the entire screen */
-  color: var(--text-primary);
-  transition: var(--transition);
-}
-
 
 /* Links */
 a {
@@ -60,6 +50,7 @@ a {
   transition: var(--transition);
 }
 a:hover {
+
   color: #660000;
   transform: translateY(-2px);
 }
@@ -91,6 +82,7 @@ button {
 button:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: var(--shadow-dark);
+
   background: linear-gradient(45deg, #801818, #801818);
 }
 button:focus,

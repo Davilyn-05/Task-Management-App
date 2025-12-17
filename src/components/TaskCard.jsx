@@ -22,6 +22,7 @@ export default function TaskCard({ task, onDelete, onUpdate }) {
         return '';
       default:
         return '';
+
     }
   };
 
@@ -31,11 +32,13 @@ export default function TaskCard({ task, onDelete, onUpdate }) {
   };
 
   return (
+
     <div className="shadow-lg p-5 hover:shadow-xl transition flex flex-col h-full bg-white border-gray-200 text-gray-900" >
       {/* Header with Title and Date */}
       <div className="mb-3">
         <h3 className="font-bold text-lg mb-1">{task.title}</h3>
         <p className="text-xs text-gray-500">{formatDate(task.createdAt)}</p>
+
       </div>
 
       {/* Description */}
@@ -47,9 +50,11 @@ export default function TaskCard({ task, onDelete, onUpdate }) {
       <div className="space-y-3 mt-auto pt-4 border-t border-gray-200">
         {/* Status Dropdown */}
         <div className="flex items-center gap-2">
+
           <label className="text-xs font-semibold text-gray-600" style={{ margin: '10px'}}>Status:</label>
           <select
             className={`flex-1 border p-2 rounded-lg font-semibold text-sm transition focus:outline-none ${getStatusColor(task.status)}`}
+
             value={task.status}
             onChange={(e) => onUpdate(task.id, e.target.value)}
           >
@@ -69,7 +74,7 @@ export default function TaskCard({ task, onDelete, onUpdate }) {
           className="w-full px-3 py-2 rounded-lg font-semibold transition active:scale-95 bg-blue-300 hover:bg-blue-400 text-blue-900"
           onClick={() => onDelete(task.id)}
         >
-          Delete
+          Delete Task
         </button>
       </div>
     </div>
