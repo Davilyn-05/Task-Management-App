@@ -1,15 +1,8 @@
-import sorsuImage from "../assets/sorsu.jpg";
 export default function CoverPage({ onStart }) 
 {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-lg shadow-2xl p-8 text-center">
-        <img
-  src={sorsuImage}
-  alt="SORSU Logo"
-  className="w-32 mx-auto mb-4"
-/>
-
         <h1 className="text-4xl font-bold text-[#660000] mb-4 m-2 p-2">Task Management App</h1>
         <p className="text-gray-600 mb-8 m-2 p-2 " 
         style={{ margin: '25px'}}>
