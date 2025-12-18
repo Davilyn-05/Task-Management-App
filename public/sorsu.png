@@ -1,3 +1,0 @@
-import sorsuImage from '../assets/sorsu.png';  // In your component
-// Then in JSX:
-<img src={sorsuImage} alt="Description" />
